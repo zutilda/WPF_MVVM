@@ -36,7 +36,6 @@ namespace WPF_MVVM
         {
             set
             {
-                // индек - это необходимое значение, которое нужно получить
                 CBIndex = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Operation"));  // событие, которое реагирует на изменение свойства
             }
@@ -51,14 +50,14 @@ namespace WPF_MVVM
         {
             get
             {
-                return GetResult(Model.One.Text, Model.Two.Text);
+                return Check(Model.One.Text, Model.Two.Text);
             }
             set
             {
             }
         }
 
-        private string GetResult(string One, string Two)
+        private string Check(string One, string Two)
         {
             try
             {
@@ -71,7 +70,7 @@ namespace WPF_MVVM
                     return "";
                 }
 
-                else return Calculation(one, two);
+                else return Calc(one, two);
             }
             catch
             {
@@ -85,7 +84,7 @@ namespace WPF_MVVM
             }
         }
 
-        private string Calculation(double one, double two)
+        private string Calc(double one, double two)
         {
             switch (CBIndex)
             {
